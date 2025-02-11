@@ -1,19 +1,22 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-gradio-webui",
   "version": "0.1.0",
-  "description": "",
+  "description": "Gradio WebUI Stream Node for n8n",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "gradio",
+    "webui",
+    "stream"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/seu-usuario/n8n-nodes-gradio-webui",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Seu Nome",
+    "email": "seu@email.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/<...>/n8n-nodes-gradio-webui.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -22,28 +25,21 @@
   "packageManager": "pnpm@9.1.4",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "lint": "eslint nodes/**/*.ts package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes package.json"
   },
   "files": [
-    "dist"
+   "dist"
   ],
   "n8n": {
-    "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
-    "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
-    ]
-  },
+      "n8nNodesApiVersion": 1,
+      "credentials": [],
+      "nodes": ["dist/nodes/GradioWebUiStream/GradioWebUiStream.node.js"]
+    },
   "devDependencies": {
     "@typescript-eslint/parser": "^7.15.0",
     "eslint": "^8.56.0",
@@ -54,5 +50,8 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "dependencies": {
+    "n8n-nodes-gradio-webui": "file:C:/n8n-nodes-starter"
   }
 }
